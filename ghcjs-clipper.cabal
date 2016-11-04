@@ -1,0 +1,38 @@
+name:                ghcjs-clipper
+version:             0.1.0.0
+synopsis:            GHCJS wrapper for the Javascript Clipper library
+description:         Please see README.md
+homepage:            https://github.com/manyoo/ghcjs-clipper#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Eric Wong
+maintainer:          ericsyw@gmail.com
+copyright:           2016 Eric Wong
+category:            Web
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  js-sources:          javascript/clipper.js
+  hs-source-dirs:      src
+  exposed-modules:     GHCJS.Clipper.Types,
+                       GHCJS.Clipper.Clipper
+                       GHCJS.Clipper.ClipperOffset
+                       GHCJS.Clipper
+  build-depends:       base >= 4.7 && < 5,
+                       ghcjs-base
+  default-language:    Haskell2010
+
+test-suite ghcjs-clipper-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , ghcjs-clipper
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/ghcjs-clipper
