@@ -77,6 +77,7 @@ orientation = js_orientation . toJSVal
 data PointPolygonRelation = PPRInPolygon
                           | PPROnPolygon
                           | PPROutPolygon
+                          deriving Eq
 
 toPointPolygonRelation :: Int -> PointPolygonRelation
 toPointPolygonRelation i | i == 0    = PPROutPolygon
