@@ -16,7 +16,7 @@ foreign import javascript unsafe "new window['ClipperLib']['ClipperOffset']($1, 
 mkClipperOffset :: Double -> Double -> IO ClipperOffset
 mkClipperOffset miterLimit roundPrecision = fromJSVal <$> js_mkClipperOffset miterLimit roundPrecision
 
-foreign import javascript unsafe "$(4)['AddPath']($1, $2, $3)"
+foreign import javascript unsafe "($4)['AddPath']($1, $2, $3)"
     js_addPath :: JSVal -> Int -> Int -> JSVal -> IO ()
 
 coAddPath :: Path -> JoinType -> EndType -> ClipperOffset -> IO ()
