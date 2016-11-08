@@ -31,7 +31,7 @@ foreign import javascript unsafe "($4)['AddPath']($1, $2, $3)"
 addPath :: Path -> PolyType -> Bool -> Clipper -> IO ()
 addPath p pt closed clp = js_addPath (toJSVal p) (fromEnum pt) closed (toJSVal clp)
 
-foreign import javascript unsafe "($4)['AddPath']($1, $2, $3)"
+foreign import javascript unsafe "($4)['AddPaths']($1, $2, $3)"
     js_addPaths :: JSVal -> Int -> Bool -> JSVal -> IO ()
 
 addPaths :: Paths -> PolyType -> Bool -> Clipper -> IO ()
